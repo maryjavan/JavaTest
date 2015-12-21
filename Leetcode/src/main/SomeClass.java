@@ -9,6 +9,8 @@ public class SomeClass {
 		String[] second = version2.split("//.");
 		int i=0;
 				
+		
+		//consider using Integer.compare https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html#compare(int,%20int)
 		while (i < first.length && i < second.length ){
 			if (Integer.parseInt(first[i]) < Integer.parseInt(second[i])) return -1;
 			else if (Integer.parseInt(first[i]) > Integer.parseInt(second[i])) return 1; 
