@@ -11,7 +11,36 @@ public static List<String> generateParenthesis(int n) {
 	List<String> l = new ArrayList<String>();
 	List<String> temp = new ArrayList<String>();
 
-	if ( n == 2) l.add("()");
+	if (n<1) return null;
+	
+	for (int i=1; i <= n; i++){
+		if ( i == 1) l.add("()");
+		
+		else {
+			temp.clear();
+			temp.addAll(l);
+			Iterator<String> it= temp.iterator();
+			l.clear();
+			
+			while (it.hasNext()){
+				String s = it.next();
+				l.add("("+s+")");
+				String left = "()"+ s;
+				String right = s + "()";
+				if (left.equals(right) ) l.add(right);
+				else {
+				l.add(left);
+				l.add(right);
+				}
+			}
+						
+		}
+    }
+	return l;	
+	}
+	/*
+	
+	if ( n == 1) l.add("()");
 	
 	else {
 		
@@ -20,28 +49,26 @@ public static List<String> generateParenthesis(int n) {
 		
 		while (it.hasNext()){
 			String s = it.next();
+			l.add("("+s+")");
 			String left = "()"+ s;
 			String right = s + "()";
 			if (left.equals(right) ) l.add(right);
 			else {
-			l.add("()"+ s);
-			l.add(s + "()");
+			l.add(left);
+			l.add(right);
 			}
-			l.add("("+s+")");
 		}
 	
 	return l;
 		
 			
 	}
-	
-	return l;
-    }
+	*/
 	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(generateParenthesis(6));
+		System.out.println(generateParenthesis(4));
 	}
 
 }
