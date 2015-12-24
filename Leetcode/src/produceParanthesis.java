@@ -41,7 +41,7 @@ public static List<String> generateParenthesis(int n) {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(generateParenthesis(4));
+		System.out.println(generateParenthesis(6));
 	}
 
 }
