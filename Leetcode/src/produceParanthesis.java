@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 
 
@@ -10,6 +12,7 @@ public static List<String> generateParenthesis(int n) {
      
 	List<String> l = new ArrayList<String>();
 	List<String> temp = new ArrayList<String>();
+	Set<String> hs = new HashSet<String>();
 
 	if (n<1) return null;
 	
@@ -36,6 +39,11 @@ public static List<String> generateParenthesis(int n) {
 						
 		}
     }
+
+	
+	hs.addAll(l);
+	l.clear();
+	l.addAll(hs);	
 	return l;	
 	}
 	/*
