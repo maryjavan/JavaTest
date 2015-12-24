@@ -13,12 +13,16 @@ public class addB {
 		    int sum = 0;
 		    
 		    while (first >= 0 || second >= 0) {
-	        
+	      
+		    	// isnt sum always 0 ? 
 		        sum = sum + carry;
+		        
+		        
 		        carry=0;
 		        
 		    	if (first >= 0) {
 		    		
+		    		// consider more concise and faster form:  sum += s1.charAt(first) == '0' ? 0 : 1  
 		    	 sum = sum + Integer.parseInt(String.valueOf(s1.charAt(first)));
 		    		
 		            first--;
@@ -29,6 +33,9 @@ public class addB {
 		        	
 		            second--;
 		        }
+		        // consider more concise form:
+		        // carry = sum / 2
+		        // sum = sum % 2
 		        
 		        if (sum == 2) {
 		        	
