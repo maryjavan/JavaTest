@@ -30,11 +30,9 @@ public static List<String> generateParenthesis(int n) {
 				l.add("("+s+")");
 				String left = "()"+ s;
 				String right = s + "()";
-				if (left.equals(right) ) l.add(right);
-				else {
 				l.add(left);
 				l.add(right);
-				}
+				
 			}
 						
 		}
